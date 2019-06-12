@@ -283,3 +283,6 @@ vendor.qvr                       u:object_r:qvr_prop:s0
 vendor.seccam_hal_service  u:object_r:vendor_seccam_prop:s0
 vendor.hyp_core_ctl        u:object_r:vendor_core_ctl_prop:s0
 ctl.qvrd                   u:object_r:ctl_qvrd_prop:s0
+
+#tee
+sys.listeners.   u:object_r:qseecomtee_prop:s0

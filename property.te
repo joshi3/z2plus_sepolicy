@@ -216,3 +216,6 @@ type vendor_core_ctl_prop, property_type;
 
 #properties for qvrd
 type ctl_qvrd_prop, property_type;
+
+#property for tee
+type qseecomtee_prop, property_type;
