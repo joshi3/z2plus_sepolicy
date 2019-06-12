@@ -1,0 +1,2 @@
+allow toolbox init:fifo_file { read write open getattr setattr ioctl };
+allow toolbox sensors_persist_file:dir { read write open getattr ioctl search };
