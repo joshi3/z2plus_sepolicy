@@ -1,2 +1,3 @@
 allow toolbox init:fifo_file { read write open getattr setattr ioctl };
 allow toolbox sensors_persist_file:dir { read write open getattr ioctl search };
+allow toolbox vendor_radio_prop:property_service set;

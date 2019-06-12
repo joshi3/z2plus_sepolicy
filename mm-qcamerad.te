@@ -80,5 +80,6 @@ allow mm-qcamerad sysfs_data:file r_file_perms;
 
 allow mm-qcamerad sysfs:file { open read };
 allow mm-qcamerad sysfs_graphics:file { open read };
-allow mm-qcamerad camera_data_file:dir { search open read write }; 
+allow mm-qcamerad camera_data_file:dir { search open read write };
 allow mm-qcamerad vfat:dir { search open read write ioctl };
+allow mm-qcamerad default_prop:property_service set;
