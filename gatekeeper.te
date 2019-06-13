@@ -31,3 +31,5 @@
 
 # Allow gatekeeper to bind to esepmdaemon
 #binder_call(gatekeeperd, esepmdaemon)
+
+allow gatekeeperd qseecomtee_prop:file { read open };

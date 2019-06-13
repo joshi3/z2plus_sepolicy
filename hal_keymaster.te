@@ -27,3 +27,4 @@
 
 # Allow keymaster HAL to read listener property
 get_prop(hal_keymaster_default, vendor_tee_listener_prop)
+allow hal_keymaster_default qseecomtee_prop:file rw_file_perms;

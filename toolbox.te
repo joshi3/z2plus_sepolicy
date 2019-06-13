@@ -1,3 +1,7 @@
 allow toolbox init:fifo_file { read write open getattr setattr ioctl };
 allow toolbox sensors_persist_file:dir { read write open getattr ioctl search };
 allow toolbox vendor_radio_prop:property_service set;
+allow toolbox sensors_persist_file:file { getattr setattr };
+allow toolbox self:capability { chown };
+allow toolbox property_socket:sock_file { read write open };
+allow toolbox init:unix_stream_socket { connectto };

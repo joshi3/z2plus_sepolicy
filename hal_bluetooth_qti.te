@@ -82,3 +82,7 @@ allow system_app hal_bluetooth_hwservice :hwservice_manager find;
 #FM IPC with BT/FM hal daemon
 binder_call(system_app, hal_bluetooth);
 binder_call(hal_bluetooth, system_app);
+
+allow hal_bluetooth_qti bluetooth_data_file:dir rw_dir_perms;
+allow hal_bluetooth_qti bluetooth_data_file:file rw_file_perms;
+allow hal_bluetooth_qti vfat:file rw_file_perms;
