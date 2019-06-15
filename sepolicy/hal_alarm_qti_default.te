@@ -27,8 +27,8 @@
 
 type hal_alarm_qti_default, domain;
 hal_server_domain(hal_alarm_qti_default, hal_alarm_qti)
-
-type hal_alarm_qti_default_exec, exec_type, vendor_file_type, file_type;
+type hal_alarm_qti_default_file, vendor_file_type, file_type;
+type hal_alarm_qti_default_exec, exec_type,  file_type;
 init_daemon_domain(hal_alarm_qti_default)
 
 allow hal_alarm_qti_default rtc_device:chr_file r_file_perms;

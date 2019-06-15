@@ -28,7 +28,8 @@
 # Define domain
 type hal_display_color_default, domain;
 hal_server_domain(hal_display_color_default, hal_display_color)
-type hal_display_color_default_exec, exec_type, vendor_file_type, file_type;
+type hal_display_color_default_exec, exec_type, file_type;
+type hal_display_color_default_file, vendor_file_type, file_type;
 init_daemon_domain(hal_display_color_default)
 
 # Allow hwbinder call from hal client to server

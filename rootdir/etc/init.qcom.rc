@@ -65,7 +65,7 @@ on fs
     mount_all fstab.qcom
 
 on late-fs
-   
+
     # Start services for bootanim
     start surfaceflinger
     start bootanim
@@ -76,7 +76,7 @@ on late-fs
     # Mount RW partitions which need run fsck
 
     mount_all fstab.qcom
-    
+
     # boot time fs tune
     write /sys/block/sda/queue/iostats 0
     write /sys/block/sda/queue/scheduler cfq
@@ -211,7 +211,7 @@ on post-fs-data
     mkdir /data/vendor/perfd 0770 root system
     chmod 2770 /data/vendor/perfd
     rm /data/vendor/perfd/default_values
-    
+
     # NFC local data and nfcee xml storage
     mkdir /data/nfc 0770 nfc nfc
     mkdir /data/nfc/param 0770 nfc nfc
@@ -265,7 +265,7 @@ on boot
     chown system system /sys/module/msm_core/parameters/disabled
     chown system system /sys/kernel/debug/msm_core/enable
     chown system system /sys/kernel/debug/msm_core/ptable
-   
+
     # KeyDisabler
     chown system system /sys/devices/soc/soc:fpc1020/utouch_disable
     chmod 0660 /sys/devices/soc/soc:fpc1020/utouch_disable
@@ -294,7 +294,7 @@ on boot
     chmod 0440 /sys/devices/soc/75ba000.i2c/i2c-12/12-0020/secure_touch
     chown system drmrpc /sys/devices/soc/75ba000.i2c/i2c-12/12-0020/secure_touch_enable
     chown system drmrpc /sys/devices/soc/75ba000.i2c/i2c-12/12-0020/secure_touch
- 
+
     # Access permission for smartPA
     chmod 0666 /dev/i2c-3
     chmod 0666 /dev/i2c-9
@@ -489,8 +489,8 @@ service qvop-daemon /vendor/bin/qvop-daemon
 
 service vendor.netmgrd /vendor/bin/netmgrd
     class main
-    user root
-    group root wifi wakelock radio inet
+    user system
+    group system wifi wakelock radio inet
     writepid /dev/cpuset/system-background/tasks
 
 service ipacm /vendor/bin/ipacm
@@ -684,6 +684,7 @@ service ppd /vendor/bin/mm-pp-dpps
     class hal
     user system
     group system graphics
+    seclabel u:r:camera:s0
     socket pps stream 0660 system system
 
 on property:init.svc.surfaceflinger=restarting

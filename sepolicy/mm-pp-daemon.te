@@ -1,6 +1,6 @@
 type mm-pp-daemon, domain;
-type mm-pp-daemon_exec, exec_type, vendor_file_type, file_type;
-
+type mm-pp-daemon_exec, exec_type, file_type;
+type mm-pp-dpps_file, vendor_file_type, file_type;
 init_daemon_domain(mm-pp-daemon)
 
 #Need to use fb ioctls to communicate with kernel
@@ -45,7 +45,7 @@ userdebug_or_eng(`
   # This allows pp-daemon to use shell commands to blank
   # the display - it uses input keyevent to do this
   allow mm-pp-daemon { vendor_shell_exec
-                      #zygote_exec 
+                      #zygote_exec
   }:file rx_file_perms;
   allow mm-pp-daemon system_file:file x_file_perms;
   allow mm-pp-daemon self:process ptrace;

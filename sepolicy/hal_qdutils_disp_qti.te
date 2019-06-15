@@ -27,8 +27,8 @@
 
 type hal_qdutils_disp_qti, domain;
 hal_server_domain(hal_qdutils_disp_qti, hal_qdutils_disp)
-
-type hal_qdutils_disp_qti_exec, exec_type, file_type, vendor_file_type;
+type hal_qdutils_disp_qti_file, file_type, vendor_file_type;
+type hal_qdutils_disp_qti_exec, exec_type, file_type;
 init_daemon_domain(hal_qdutils_disp_qti)
 
 binder_call(hal_qdutils_disp_client, hal_qdutils_disp_server)
